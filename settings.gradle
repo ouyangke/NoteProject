@@ -10,7 +10,13 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
 rootProject.name = "Note"
 include ':app'
+include 'android:jni'
+include 'android:thirdpartylibrary'
+include 'base:designpattern'
+include 'base:network'
+include ':nativelib'
