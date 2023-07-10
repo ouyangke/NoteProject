@@ -15,9 +15,14 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Note"
 include ':app'
-include 'android:jni'
-include 'android:thirdpartylibrary'
-include 'base:designpattern'
-include 'base:network'
-include ':nativelib'
+
+include ':android:jni'
+include ':android:thirdpartylibrary'
+
 include ':base:algorithm'
+include ':base:designpattern'
+include ':base:network'
+
+include ':language:c'
+include ':language:java'
+include ':language:kotlin'
