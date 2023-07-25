@@ -1,6 +1,14 @@
 # Framework笔记
 
-## 跨进程通讯(Binder)
+## Handler
+
+### 待总结
+
+### 参考资料
+
+1. [android源码学习-Handler机制及其六个核心点](https://blog.csdn.net/rzleilei/article/details/123187510)
+
+## Binder
 
 ### 跨进程通讯实现方式
 
@@ -40,12 +48,16 @@
   ![binder架构](/picture/binder架构.jpg)
 - binder机制
   ![binder机制](/picture/binder机制.jpg)
+- ServiceManage启动
+  ![ServiceManager启动](/picture/ServiceManager启动.jpg)
+- ServiceManage注册服务
+  ![ServiceManage注册服务](/picture/ServiceManager注册服务.jpg)
+- ServiceManage获取服务
+  ![ServiceManage获取服务](/picture/ServiceManager获取服务.jpg)
 
 ### 参考资料
 
 1. [一篇文章了解相见恨晚的 Android Binder 进程间通讯机制](https://blog.csdn.net/freekiteyu/article/details/70082302)
-
-## Handler
 
 ## Zygote
 
