@@ -1,5 +1,5 @@
 # Framework笔记
-![FrameWork思维导图](/picture/Android_Framework.jpeg)
+![FrameWork思维导图](./picture/Android_Framework.jpeg)
 
 ## Handler
 
@@ -46,15 +46,15 @@
 ### binder理解
 
 - binder架构
-  ![binder架构](/picture/binder架构.jpg)
+  ![binder架构](./picture/binder架构.jpg)
 - binder机制
-  ![binder机制](/picture/binder机制.jpg)
+  ![binder机制](./picture/binder机制.jpg)
 - ServiceManage启动
-  ![ServiceManager启动](/picture/ServiceManager启动.jpg)
+  ![ServiceManager启动](./picture/ServiceManager启动.jpg)
 - ServiceManage注册服务
-  ![ServiceManage注册服务](/picture/ServiceManager注册服务.jpg)
+  ![ServiceManage注册服务](./picture/ServiceManager注册服务.jpg)
 - ServiceManage获取服务
-  ![ServiceManage获取服务](/picture/ServiceManager获取服务.jpg)
+  ![ServiceManage获取服务](./picture/ServiceManager获取服务.jpg)
 
 ### 参考资料
 
