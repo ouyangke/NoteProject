@@ -1,4 +1,5 @@
 # Framework笔记
+![FrameWork思维导图](/picture/Android_Framework.jpeg)
 
 ## Handler
 
