@@ -13,22 +13,23 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-rootProject.name = "Note"
+rootProject.name = "AndroidNote"
+
 include ':app'
 
-include ':android:jni'
-include ':android:thirdpartylibrary'
+include ':module_android:ndk'
+include ':module_android:thirdpartylibrary'
+include ':module_android:framework'
+include ':module_android:iot'
 
-include ':base:algorithm'
-include ':base:designpattern'
-include ':base:network'
+include ':module_base:algorithm'
+include ':module_base:designpattern'
+include ':module_base:network'
 
-include ':language:c'
-include ':language:java'
-include ':language:kotlin'
-include ':android:framework'
-include ':android:iot'
-include ':language:cpp'
-include ':client'
-include ':service'
-include ':nativelib'
+include ':module_language:c'
+include ':module_language:cpp'
+include ':module_language:java'
+include ':module_language:kotlin'
+
+include ':sample:client'
+include ':sample:service'

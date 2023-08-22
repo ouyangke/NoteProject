@@ -1,4 +1,4 @@
-package com.oyke.nativelib
+package com.oyke.jni
 
 import java.lang.Exception
 
@@ -28,6 +28,7 @@ class NativeLib {
     external fun getStringUTFLength(stringUTF: String):Int
 
     external fun testThrowException()
+
 
     fun throwException(){
         throw NullPointerException("空指针异常")
