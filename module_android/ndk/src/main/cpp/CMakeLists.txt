@@ -4,10 +4,6 @@
 # Sets the minimum version of CMake required to build the native library.
 
 cmake_minimum_required(VERSION 3.22.1)
-
-#设置生成的so动态库最后输出的路径
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/src/main/jniLibs/)
-
 # Declares and names the project.
 
 project("nativelib")

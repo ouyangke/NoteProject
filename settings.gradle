@@ -13,7 +13,7 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-rootProject.name = "AndroidNote"
+rootProject.name = "NoteProject"
 
 include ':app'
 
@@ -26,10 +26,9 @@ include ':module_base:algorithm'
 include ':module_base:designpattern'
 include ':module_base:network'
 
-include ':module_language:c'
-include ':module_language:cpp'
 include ':module_language:java'
 include ':module_language:kotlin'
 
 include ':sample:client'
 include ':sample:service'
+include ':sample:OpenCVDemo'
