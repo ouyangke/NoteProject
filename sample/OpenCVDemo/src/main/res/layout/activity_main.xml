@@ -7,40 +7,131 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btn_play"
+        android:id="@+id/btn_original"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="play"
+        android:maxLines="1"
+        android:text="原始图片"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_pause"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_grey"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="pause"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:maxLines="1"
+        android:text="灰度处理"
+        app:layout_constraintEnd_toStartOf="@id/btn_lighten"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_play" />
+        app:layout_constraintTop_toBottomOf="@id/btn_original" />
 
     <Button
-        android:id="@+id/btn_getInfo"
+        android:id="@+id/btn_lighten"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="亮化处理"
+        app:layout_constraintBottom_toBottomOf="@id/btn_grey"
+        app:layout_constraintEnd_toStartOf="@id/btn_sharpen"
+        app:layout_constraintStart_toEndOf="@id/btn_grey"
+        app:layout_constraintTop_toTopOf="@id/btn_grey" />
+
+    <Button
+        android:id="@+id/btn_sharpen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="锐化处理"
+        app:layout_constraintBottom_toBottomOf="@id/btn_grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_lighten"
+        app:layout_constraintTop_toTopOf="@id/btn_grey" />
+
+    <Button
+        android:id="@+id/btn_blur"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="均值平滑"
+        app:layout_constraintEnd_toStartOf="@id/btn_blur_gaussian"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_grey" />
+
+    <Button
+        android:id="@+id/btn_blur_gaussian"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="高斯平滑"
+        app:layout_constraintBottom_toBottomOf="@id/btn_blur"
+        app:layout_constraintEnd_toStartOf="@id/btn_blur_median"
+        app:layout_constraintStart_toEndOf="@id/btn_blur"
+        app:layout_constraintTop_toTopOf="@id/btn_blur" />
+
+    <Button
+        android:id="@+id/btn_blur_median"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="中值平滑"
+        app:layout_constraintBottom_toBottomOf="@id/btn_blur"
+        app:layout_constraintEnd_toStartOf="@id/btn_blur_bilateral"
+        app:layout_constraintStart_toEndOf="@id/btn_blur_gaussian"
+        app:layout_constraintTop_toTopOf="@id/btn_blur" />
+
+    <Button
+        android:id="@+id/btn_blur_bilateral"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="双边平滑"
+        app:layout_constraintBottom_toBottomOf="@id/btn_blur"
+        app:layout_constraintEnd_toStartOf="@id/btn_filter2D"
+        app:layout_constraintStart_toEndOf="@id/btn_blur_median"
+        app:layout_constraintTop_toTopOf="@id/btn_blur" />
+
+    <Button
+        android:id="@+id/btn_filter2D"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="线性滤波"
+        app:layout_constraintBottom_toBottomOf="@id/btn_blur"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_blur_bilateral"
+        app:layout_constraintTop_toTopOf="@id/btn_blur" />
+
+
+    <Button
+        android:id="@+id/btn_erode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="腐蚀处理"
+        app:layout_constraintEnd_toStartOf="@id/btn_dilate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_blur" />
+
+    <Button
+        android:id="@+id/btn_dilate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="膨胀处理"
+        app:layout_constraintBottom_toBottomOf="@id/btn_erode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_erode"
+        app:layout_constraintTop_toTopOf="@id/btn_erode" />
+
+
+    <ImageView
+        android:id="@+id/iv_preview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="getInfo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_pause" />
-
-    <TextView
-        android:id="@+id/tv_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/btn_erode" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

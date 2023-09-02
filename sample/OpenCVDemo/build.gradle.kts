@@ -15,7 +15,15 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
-                cppFlags("")
+                cppFlags("-std=c++11 -frtti -fexceptions")
+                arguments("-DANDROID_STL=c++_shared","-DANDROID_TOOLCHAIN=clang")
+                //配置支持的架构
+                abiFilters(
+                    "arm64-v8a",
+                    //"armeabi-v7a",
+                    //"x86",
+                    //"x86_64",
+                )
             }
         }
 
@@ -25,13 +33,12 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
-
-    sourceSets["main"].jniLibs.srcDir("libs")
+    //配置jniLibs目录
+    sourceSets["main"].jniLibs.srcDir("src/main/cpp/libs")
 
     externalNativeBuild {
         cmake {

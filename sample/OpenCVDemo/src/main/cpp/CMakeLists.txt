@@ -6,7 +6,7 @@
 cmake_minimum_required(VERSION 3.22.1)
 
 # 设置项目名
-project("opencv-lib")
+project("opencv_utils")
 
 # 输出日志
 message(STATUS "******************************************************************")
@@ -15,13 +15,13 @@ message(STATUS "PROJECT_SOURCE_DIR->)" ${PROJECT_SOURCE_DIR})
 message(STATUS "******************************************************************")
 
 # 设置生成的so动态库最后输出的路径
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/../../../libs/${CMAKE_ANDROID_ARCH_ABI})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/libs/${CMAKE_ANDROID_ARCH_ABI}/)
 
 # 设置opencv头文件目录
 set(CMAKE_OPENCV_INCLUDE_DIRECTORY ${CMAKE_SOURCE_DIR}/include/)
 
 # 设置opencv库文件目录
-set(CMAKE_OPENCV_LIBRARY_DIRECTORY ${CMAKE_SOURCE_DIR}/../../../libs/${CMAKE_ANDROID_ARCH_ABI}/)
+set(CMAKE_OPENCV_LIBRARY_DIRECTORY ${CMAKE_SOURCE_DIR}/libs/${CMAKE_ANDROID_ARCH_ABI}/)
 
 #########################################第三方库添加#################################################
 # 1.设置第三方库头文件目录路径
@@ -59,7 +59,7 @@ add_library(
         # 静态库 or 动态库
         SHARED
         # List C/C++ source files with relative paths to this CMakeLists.txt.
-        opencvdemo.cpp)
+        OpenCVUtils.cpp)
 
 # 查找库(一般用于查找系统内置库)
 find_library(
@@ -76,4 +76,5 @@ target_link_libraries(
         # 需要链接到目标库的列表
         opencv_java4
         android
+        jnigraphics
         ${log-lib})
