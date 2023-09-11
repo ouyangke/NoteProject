@@ -124,6 +124,27 @@
         app:layout_constraintStart_toEndOf="@id/btn_erode"
         app:layout_constraintTop_toTopOf="@id/btn_erode" />
 
+    <Button
+        android:id="@+id/btn_zoom_in"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="放大"
+        app:layout_constraintTop_toBottomOf="@id/btn_erode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_zoom_out"/>
+
+    <Button
+        android:id="@+id/btn_zoom_out"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="缩小"
+        app:layout_constraintStart_toEndOf="@id/btn_zoom_in"
+        app:layout_constraintTop_toTopOf="@id/btn_zoom_in"
+        app:layout_constraintBottom_toBottomOf="@id/btn_zoom_in"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
     <ImageView
         android:id="@+id/iv_preview"
@@ -132,6 +153,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_erode" />
+        app:layout_constraintTop_toBottomOf="@id/btn_zoom_in" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

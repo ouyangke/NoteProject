@@ -31,6 +31,9 @@ class MainActivity : AppCompatActivity() {
         val btnErode = findViewById<Button>(R.id.btn_erode)
         val btnDilate = findViewById<Button>(R.id.btn_dilate)
 
+        val btnZoomIn = findViewById<Button>(R.id.btn_zoom_in)
+        val btnZoomOut =findViewById<Button>(R.id.btn_zoom_out)
+
         val ivPreview = findViewById<ImageView>(R.id.iv_preview)
 
         var bitmap = BitmapFactory.decodeResource(this.resources,R.drawable.pic_1)
@@ -80,6 +83,14 @@ class MainActivity : AppCompatActivity() {
         }
         btnDilate.setOnClickListener {
             bitmap = OpenCVUtils.dilateBitmap(bitmap,20)
+            ivPreview.setImageBitmap(bitmap)
+        }
+        btnZoomIn.setOnClickListener {
+            bitmap = OpenCVUtils.resizeBitmap(bitmap,2.0f,1)
+            ivPreview.setImageBitmap(bitmap)
+        }
+        btnZoomOut.setOnClickListener {
+            bitmap = OpenCVUtils.resizeBitmap(bitmap,0.5f,2)
             ivPreview.setImageBitmap(bitmap)
         }
 

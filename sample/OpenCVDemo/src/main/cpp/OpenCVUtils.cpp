@@ -333,3 +333,17 @@ Java_com_example_opencvdemo_OpenCVUtils_00024Companion_dilateBitmap(JNIEnv *env,
     matToBitmap(env, dst, resultBitmap);
     return resultBitmap;
 }
+extern "C"
+JNIEXPORT jobject JNICALL
+Java_com_example_opencvdemo_OpenCVUtils_00024Companion_resizeBitmap(JNIEnv *env, jobject thiz,
+                                                                    jobject bitmap, jfloat size,
+                                                                    jint type) {
+    cv::Mat rgbMat;
+    bitmapToMat(env, bitmap, rgbMat);
+    cv::Mat dst;
+    //放大或者缩小操作
+    cv::resize(rgbMat,dst,cv::Size(rgbMat.cols * size,rgbMat.rows * size));
+    jobject resultBitmap = createBitmap(env, dst.cols, dst.rows, "ARGB_8888");
+    matToBitmap(env, dst, resultBitmap);
+    return resultBitmap;
+}

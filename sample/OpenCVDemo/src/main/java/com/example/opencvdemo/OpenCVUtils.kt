@@ -26,5 +26,7 @@ class OpenCVUtils {
         external fun erodeBitmap(bitmap: Bitmap, kernelSize: Int): Bitmap
 
         external fun dilateBitmap(bitmap: Bitmap, kernelSize: Int): Bitmap
+
+        external fun resizeBitmap(bitmap: Bitmap,size:Float,type:Int):Bitmap
     }
 }
