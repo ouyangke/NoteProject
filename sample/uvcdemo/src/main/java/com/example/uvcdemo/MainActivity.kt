@@ -183,7 +183,7 @@ class MainActivity : AppCompatActivity() {
         handlerThread1 = HandlerThread("handlerThread1")
         handlerThread1?.start()
         handler1 = Handler(Looper.getMainLooper())
-        nv21Reader1 = ImageReader.newInstance(640, 640, ImageFormat.YUV_420_888, 2)
+        nv21Reader1 = ImageReader.newInstance(1280, 720, ImageFormat.YUV_420_888, 2)
         nv21Reader1?.setOnImageAvailableListener({
             val image = it.acquireLatestImage()
             getFps1()
@@ -193,7 +193,7 @@ class MainActivity : AppCompatActivity() {
         handlerThread2 = HandlerThread("handlerThread2")
         handlerThread2?.start()
         handler2 = Handler(Looper.getMainLooper())
-        nv21Reader2 = ImageReader.newInstance(320, 240, ImageFormat.YUV_420_888, 2)
+        nv21Reader2 = ImageReader.newInstance(1280, 720, ImageFormat.YUV_420_888, 2)
         nv21Reader2?.setOnImageAvailableListener({
             val image = it.acquireLatestImage()
             getFps2()
@@ -253,7 +253,7 @@ class MainActivity : AppCompatActivity() {
             )
             previewRequestBuilder1?.set(CaptureRequest.CONTROL_AE_TARGET_FPS_RANGE, Range(30,30))
             val surfaceTexture1 = sv1.surfaceTexture
-            surfaceTexture1?.setDefaultBufferSize(640, 640)
+            surfaceTexture1?.setDefaultBufferSize(1280, 720)
             val previewSurface1 = Surface(surfaceTexture1)
 
             previewRequestBuilder1?.addTarget(previewSurface1)
@@ -291,7 +291,7 @@ class MainActivity : AppCompatActivity() {
             previewRequestBuilder2 = device2?.createCaptureRequest(CameraDevice.TEMPLATE_PREVIEW)
             previewRequestBuilder2?.set(CaptureRequest.CONTROL_AE_TARGET_FPS_RANGE, Range(30,30))
             val surfaceTexture2 = sv2.surfaceTexture
-            surfaceTexture2?.setDefaultBufferSize(320, 240)
+            surfaceTexture2?.setDefaultBufferSize(1280, 720)
             val previewSurface2 = Surface(surfaceTexture2)
             previewRequestBuilder2?.addTarget(previewSurface2)
             nv21Reader2?.surface?.let { previewRequestBuilder2?.addTarget(it) }
